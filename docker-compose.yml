@@ -1,0 +1,18 @@
+
+version: '3'
+services:
+  turtleserver:
+    build: .
+    container_name: turtleserver
+    user: "node"
+    tty: true
+    stdin_open: true
+    environment:
+      - NODE_ENV=production
+      - LISTEN_PORT=8000
+      - HIDE_POLL=true
+    volumes:
+      - ./code:/app/code
+    ports:
+      - 8000:8000
+
